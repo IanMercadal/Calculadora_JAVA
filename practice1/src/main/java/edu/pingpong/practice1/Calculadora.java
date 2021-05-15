@@ -9,12 +9,6 @@ public class Calculadora {
     }
 
     public static void operaciones(){
-    
-        sumar sumar = new sumar();
-        restar restar = new restar();
-        multiplicar multiplicar = new multiplicar();
-        dividir dividir = new dividir();
-        resto resto = new resto();
 
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
@@ -37,23 +31,23 @@ public class Calculadora {
                 switch (opcion) {
                     case 1:
                         System.out.println("Has seleccionado la opcion 1");
-                        sumar.suma();
+                        suma();
                         break;
                     case 2:
                         System.out.println("Has seleccionado la opcion 2");
-                        restar.resta();
+                        resta();
                         break;
                     case 3:
                         System.out.println("Has seleccionado la opcion 3");
-                        multiplicar.operacionMultiplicar();
+                        operacionMultiplicar();
                         break;
                     case 4:
                         System.out.println("Has seleccionado la opcion 4");
-                        dividir.operacionDividir();
+                        operacionDividir();
                         break;
                     case 5:
                         System.out.println("Has seleccionado la opcion 5");
-                        resto.operacionResto();
+                        operacionResto();
                         break;
                     case 6:
                         salir = true;
@@ -63,10 +57,90 @@ public class Calculadora {
                     default:
                         System.out.println("Solo numeros entre 1 y 6");
                 }
-            } catch (InputMismatchException e) {
+            } 
+            catch (InputMismatchException e) {
                 System.out.println("Debes insertar un numero");
                 teclado.next();
             }
-        }    
+        }
     }
-}
+            private static void operacionResto() {
+                System.out.println("Introduce 2 numeros");
+        
+                System.out.println("Introduce el primer numero");
+                Scanner entrada = new Scanner(System.in);
+                float numero1 = entrada.nextFloat();
+        
+                System.out.println("Introduce el segundo numero");
+                Scanner entrada2 = new Scanner(System.in);
+                float numero2 = entrada.nextFloat();
+            
+                float sumaTotal = numero1 / numero2;
+        
+                System.out.println("El resto de la division es: " + (numero1 % numero2));
+            }
+
+            private static void operacionDividir() {
+                System.out.println("Introduce 2 numeros");
+    
+                System.out.println("Introduce el primer numero");
+                Scanner entrada = new Scanner(System.in);
+                float numero1 = entrada.nextFloat();
+        
+                System.out.println("Introduce el segundo numero");
+                Scanner entrada2 = new Scanner(System.in);
+                float numero2 = entrada.nextFloat();
+            
+                float sumaTotal = numero1 / numero2;
+        
+                System.out.println("La division es: " + sumaTotal);
+            }
+
+            private static void operacionMultiplicar() {
+                System.out.println("Introduce 2 numeros");
+        
+                System.out.println("Introduce el primer numero");
+                Scanner entrada = new Scanner(System.in);
+                float numero1 = entrada.nextFloat();
+        
+                System.out.println("Introduce el segundo numero");
+                Scanner entrada2 = new Scanner(System.in);
+                float numero2 = entrada.nextFloat();
+            
+                float sumaTotal = numero1 * numero2;
+        
+                System.out.println("La multiplicacion es: " + sumaTotal);
+            }
+
+            private static void resta() {
+                System.out.println("Introduce 2 numeros");
+        
+                System.out.println("Introduce el primer numero");
+                Scanner entrada = new Scanner(System.in);
+                float numero1 = entrada.nextFloat();
+        
+                System.out.println("Introduce el segundo numero");
+                Scanner entrada2 = new Scanner(System.in);
+                float numero2 = entrada.nextFloat();
+            
+                float sumaTotal = numero1 - numero2;
+        
+                System.out.println("La resta es: " + sumaTotal);
+            }
+
+            private static void suma() {
+                System.out.println("Introduce 2 numeros");
+                        
+                System.out.println("Introduce el primer numero");
+                Scanner entrada = new Scanner(System.in);
+                float numero1 = entrada.nextFloat();
+
+                System.out.println("Introduce el segundo numero");
+                Scanner entrada2 = new Scanner(System.in);
+                float numero2 = entrada.nextFloat();
+            
+                float sumaTotal = numero1 + numero2;
+
+                System.out.println("La suma es: " + sumaTotal);
+            }
+    }   
